@@ -1,0 +1,23 @@
+<%= include('includes/top.tmpl') %>
+
+    <div id="main--nojs" class="main--nojs">
+        <p>
+            <%= scaffold_nonjs %>
+        </p>
+    </div>
+
+    <div class="main">
+        <%= include('container__inputs.tmpl') %>
+        <%= include('container__results.tmpl') %>
+
+        <div class="hidden">
+            <div class="slider_color--left"></div>
+            <div class="slider_color--right"></div>
+            <%= include('vocabs_sports.tmpl') %>
+            <%= include('vocabs_scaffolding.tmpl') %>
+        </div>
+
+        <%= include('templates.tmpl') %>
+    </div>
+
+<%= include('includes/bottom.tmpl') %>

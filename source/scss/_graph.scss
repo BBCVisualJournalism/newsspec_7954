@@ -1,0 +1,108 @@
+.graph {
+    @include unselectable;
+}
+
+.graph__barchart {
+    list-style-type: none;
+    padding: 0;
+}
+
+.graph__barchart-bar {
+    margin-bottom: 0.5em;
+}
+
+.graph__bar_header {
+    font-weight: normal;
+    margin: 0.2em 0;
+    font-size: 0.8em;
+}
+
+.graph__bar_total {
+    width: 100%;
+    height: 10px;
+    background: $secondary;
+}
+
+.graph__bar_input {
+    background: #979797;
+    height: 100%;
+    transition: width 1s;
+}
+
+.graph__bar_input--seen {
+    background: $primary;
+}
+
+@include respondMinMax(380px, false) {
+    .graph__barchart {
+        width: 48%;
+        margin-right: 2%;
+        float: left;
+    }
+}
+
+.graph, .results__graph {
+    position: relative;
+}
+
+.graph__status {
+    @include unselectable;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.35em;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    clear: both;
+}
+
+.graph__status--tooltip_view {
+    position: absolute;
+    text-transform: none;
+    background: #fff;
+    font-size: 1.2em;
+    padding: 0.3em;
+    border: 1px solid grey;
+    display: none;
+}
+
+.sidebar .graph__status {
+    display: none;
+}
+
+.graph__dial {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.graph__dial__background {
+    fill: #F2F2F2;
+}
+
+.graph__slice {
+
+    .graph__slice-path {
+        fill: #F2F2F2;
+    }
+
+    .graph__slice-text {
+        display: none;
+    }
+
+}
+
+.graph__slice--seen {
+    .graph__slice-path {
+        fill: #75bdbd;
+    }
+}
+
+.graph__slice--selected {
+    .graph__slice-text {
+        display: block;
+    }
+
+    .graph__slice-path {
+        fill: #007f7f;
+    }
+}

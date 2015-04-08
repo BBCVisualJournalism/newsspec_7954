@@ -1,0 +1,23 @@
+{
+    "scaffold_button_results": "Results",
+    "scaffold_button_return": "Back to questions",
+    "scaffold_button_reset": "Have another go",
+    "scaffold_button_share": "Share button text",
+    "scaffold_results_top": "Top sports header",
+    "scaffold_results_bottom": "Bottom sports header",
+    "scaffold_results_did_you_know": "Sport facts header",
+    "share_header": "Share header",
+    "share_message_part_1": "First part of share message (name of sport is injected after this)",
+    "share_message_part_2": "Second part of share message",
+    "share_image": "Share img",
+    "share_url": "Share url",
+    "share_hashtag": "Share hashtag",
+    "scaffold_questions_cta": "Call to action above the question list",
+    "scaffold_graph_title": "Results page graph title",
+    "scaffold_graph_cta": "Instructions for interacting with the results page graph",
+    "scaffold_commonwealth_site_cta": "Call to action for the Commonwealth Games link",
+    "scaffold_commonwealth_site_url": "Link to the Commonwealth Games site",
+    "scaffold_commonwealth_site_image": "Path to the Commonwealth Games branding image",
+    "scaffold_nonjs": "This is a message for all users that don't have JavaScript enabled.",
+    "scaffold_oldbrowser": "This is a message for all users of IE7 and below who will not get this content."
+}

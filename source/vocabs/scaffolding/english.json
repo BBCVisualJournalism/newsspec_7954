@@ -1,0 +1,23 @@
+{
+    "scaffold_button_results": "Results",
+    "scaffold_button_return": "< Back to questions",
+    "scaffold_button_reset": "Have another go",
+    "scaffold_button_share": "Share",
+    "scaffold_results_top": "Your closest matches are:",
+    "scaffold_results_bottom": "You may be less suited to:",
+    "scaffold_results_did_you_know": "Did you know...?",
+    "share_header": "Share your top sport",
+    "share_message_part_1": "is my best sporting match at the Commonwealth Games.",
+    "share_message_part_2": "Find out yours!",
+    "share_image": "http://newsimg.bbc.co.uk/news/special/2014/newsspec_7954/content/english/img/commonwealth_share.gif",
+    "share_url": "http://bbc.in/1ll3XHE",
+    "share_hashtag": "bbcglasgow2014",
+    "scaffold_questions_cta": "Rate your sporting self on a scale of 1-10",
+    "scaffold_graph_title": "Your Profile",
+    "scaffold_graph_cta": "Select the chart below to see your results",
+    "scaffold_commonwealth_site_cta": "Go to BBC Sport's Commonwealth Games site >",
+    "scaffold_commonwealth_site_url": "http://www.bbc.co.uk/sport/commonwealth-games/2014",
+    "scaffold_commonwealth_site_image": "img/commonwealth3.jpg",
+    "scaffold_nonjs": "This is an interactive calculator that attempts to match you to the sports you may be most suited to. To load the calculator, please enable JavaScript and refresh the page.",
+    "scaffold_oldbrowser": "Sorry - this content will not work in your browser."
+}

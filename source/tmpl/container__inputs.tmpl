@@ -1,0 +1,101 @@
+<form class="inputs_container">
+
+    <p class="cta">
+        <%= scaffold_questions_cta %>
+        <div class="cta-icon"></div>
+    </p>
+
+    <%
+
+    var questions = []
+        question = 1;
+
+    while (true) {
+        if (obj['question_' + question + '_text'] === undefined) {
+            break;
+        } else {
+            questions.push({
+                header:         obj['question_' + question + '_header'],
+                question:       obj['question_' + question + '_question'],
+                property:       obj['question_' + question + '_property'],
+                slider: {
+                    lowest:   obj['question_' + question + '_slider_lowest']   || '',
+                    low: obj['question_' + question + '_slider_low'] || '',
+                    middle:  obj['question_' + question + '_slider_middle']  || '',
+                    high:  obj['question_' + question + '_slider_high']  || '',
+                    highest:  obj['question_' + question + '_slider_highest']  || '',
+                    descending: obj['question_' + question + '_slider_descending'] === 'TRUE'
+                },
+                input: {
+                    type:       obj['question_' + question + '_input_type']    || 'range',
+                    default:    obj['question_' + question + '_input_default'] || 5,
+                    min:        obj['question_' + question + '_input_min']     || 1,
+                    max:        obj['question_' + question + '_input_max']     || 10,
+                },
+                text:           obj['question_' + question + '_text']
+            });
+            question++;
+        }
+    }
+
+    _.forEach(questions, function (question, questionNumber) {
+        // dont want zero based indexing
+        questionNumber++;
+    %>
+        <div id="input__container--<%= questionNumber %>" class="input__container">
+
+            <p class="input__question"><%= question.question %></p>
+
+            <%
+                // range needs a visual indicator to show the user what their input is.
+                if (question.input.type === 'range') {
+            %>
+                <div class="input__element__summary"></div>
+
+                <span class="input__element__summary_text input__element__summary_text--lowest"><%= question.slider.lowest %></span>
+                <span class="input__element__summary_text input__element__summary_text--low"><%= question.slider.low %></span>
+                <span class="input__element__summary_text input__element__summary_text--middle"><%= question.slider.middle %></span>
+                <span class="input__element__summary_text input__element__summary_text--high"><%= question.slider.high %></span>
+                <span class="input__element__summary_text input__element__summary_text--highest"><%= question.slider.highest %></span>
+            <%
+                }
+            %>
+
+            <input 
+                id="question_<%= questionNumber %>"
+                class="input__element <%= question.input.type !== 'range' ? 'input__element--' + question.input.type : '' %>" 
+                type="<%= question.input.type %>" 
+                data-description="<%= question.header %>"
+                data-property="<%= question.property %>" 
+                data-reverseScale="<%= question.slider.descending %>" 
+                data-default-value="<%= question.input.default %>" 
+                value="<%= question.input.default %>" 
+                min="<%= question.input.min %>" 
+                max="<%= question.input.max %>"
+            />
+
+            <%
+                if (question.property !== 'age') {
+            %>
+                <div class="input__icon input__icon--left"></div>
+                <div class="input__icon input__icon--right"></div>
+            <%
+                }
+            %>
+
+            <p class="input__textsection">
+                <%= question.text %>
+            </p>
+        </div>
+    <%
+    });
+    %>
+
+    <a class="button button--results" href="#"><%= scaffold_button_results %></a>
+
+    <div class="sidebar">
+        <div class="sidebar__question_feedback"></div>
+        <div class="graph"></div>
+    </div>
+
+</form>

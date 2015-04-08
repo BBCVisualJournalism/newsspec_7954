@@ -1,0 +1,159 @@
+$questionIconSprite: "../img/commonwealth_sprite_mobile2.png";
+
+.input__icon {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url($questionIconSprite);
+    background-color: transparent;
+}
+
+.inputs_container--range_supported .input__icon {
+    bottom: 65px;
+    right: 5px;
+}
+
+.input__icon--left {
+    left: 0;
+}
+
+.input__icon--right {
+    right: 0;
+}
+
+#input__container--1 {
+    .input__icon--left {
+        background-position: -30px 15px;
+    }
+    .input__icon--right {
+        background-position: -30px -60px;
+    }
+}
+
+#input__container--2 {
+    .input__icon--left {
+        background-position: -30px -603px;
+    }
+    .input__icon--right {
+        background-position: -30px -539px;
+    }
+}
+
+#input__container--3 {
+    .input__icon--left {
+        background-position: -30px -457px;
+    }
+    .input__icon--right {
+        background-position: -24px -392px;
+    }
+}
+
+#input__container--4 {
+    .input__icon--left {
+        background-position: -30px -925px;
+    }
+    .input__icon--right {
+        background-position: -30px -1000px;
+    }
+}
+
+#input__container--5 {
+    .input__icon--left {
+        background-position: -30px -255px;
+    }
+    .input__icon--right {
+        background-position: -30px -334px;
+    }
+}
+
+#input__container--6 {
+    .input__icon--left {
+        background-position: -30px -1053px;
+    }
+    .input__icon--right {
+        background-position: -30px -1116px;
+    }
+}
+
+#input__container--7 {
+    .input__icon--left {
+        background-position: -30px -1190px;
+    }
+    .input__icon--right {
+        background-position: -30px -1268px;
+    }
+}
+
+#input__container--8 {
+    .input__icon--left {
+        background-position: -30px -663px;
+    }
+    .input__icon--right {
+        background-position: -30px -731px;
+    }
+}
+
+#input__container--9 {
+    .input__icon--left {
+        background-position: -30px -121px;
+    }
+    .input__icon--right {
+        background-position: -30px -195px;
+    }
+}
+
+#input__container--10 {
+    .input__icon--left {
+        background-position: -30px -1453px;
+    }
+    .input__icon--right {
+        background-position: -30px -1515px;
+    }
+}
+
+#input__container--11 {
+    .input__icon--left {
+        background-position: -30px -854px;
+    }
+    .input__icon--right {
+        background-position: -30px -785px;
+    }
+}
+
+#input__container--12 {
+    .input__icon--left {
+        background-position: -30px -1418px;
+        bottom: -8px;
+        left: 60px;
+        z-index: 99;
+
+        &.input__icon--killSloth {
+            transition: bottom 2.5s;
+            bottom:     -480px;
+        }
+    }
+    .input__icon--right {
+        background-position: -30px -1332px;
+    }
+}
+
+#input__container--13 {
+	margin: 50px 0 40px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 40px 0;
+
+    .input__question {
+        display: inline;
+        padding-left: 60px;
+        background-image: url($questionIconSprite);
+        background-repeat: no-repeat;
+        background-position: -27px -1600px;
+    }
+
+    .input__element {
+        display: inline;
+    }
+}

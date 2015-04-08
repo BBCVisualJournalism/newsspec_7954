@@ -1,0 +1,53 @@
+<script>
+    var vocabs_sports = {
+        <%
+            var sportNumber = 1;
+            
+            while (true) {
+                if (obj['feedback_' + sportNumber + '_sport_identifier'] !== undefined) {
+
+                if (sportNumber > 1) {
+                    // need to comma-separate our JSON
+                %>
+                    ,
+                <%
+                }
+                %>
+                    "<%= obj['feedback_' + sportNumber + '_sport_identifier'] %>": {
+                        "identifier": "<%= obj['feedback_' + sportNumber + '_sport_identifier'] %>",
+                        "name":       "<%= obj['feedback_' + sportNumber + '_sport_name'] %>",
+                        "feedback":   "<%= obj['feedback_' + sportNumber + '_feedback'] %>",
+                        "facts": [
+                            "<%= obj['feedback_' + sportNumber + '_fact_1'] %>",
+                            "<%= obj['feedback_' + sportNumber + '_fact_2'] %>",
+                            "<%= obj['feedback_' + sportNumber + '_fact_3'] %>"
+                        ],
+                        "linkText":   "<%= obj['feedback_' + sportNumber + '_link_text'] %>",
+                        "url":        "<%= obj['feedback_' + sportNumber + '_url'] %>",
+                        "icon":       "<%= obj['feedback_' + sportNumber + '_icon'] %>",
+                        "video":      <%= getVideoJSON(sportNumber) %>
+                    }
+                <%
+                    sportNumber++;
+                } else {
+                    break;
+                }
+            }
+        %>
+    };
+</script>
+
+<%
+
+function getVideoJSON(sportNumber) {
+    if (obj['feedback_' + sportNumber + '_video'] === 'FALSE') {
+        return false;
+    } else {
+        return '{' +
+            '"title":    "' + obj['feedback_' + sportNumber + '_video_title']    + '",' +
+            '"playlist": "' + obj['feedback_' + sportNumber + '_video_playlist'] + '"' +
+        '}';
+    }
+}
+
+%>

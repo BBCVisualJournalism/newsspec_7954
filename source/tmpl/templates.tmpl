@@ -1,0 +1,107 @@
+<script type="text/template" class="template___results__list_container">
+    
+    <h3 class="results_podium_container-header"><± header ±></h3>
+    
+    <!-- @TODO: simplify this by moving to a func -->
+    <div class="results_podium_container">
+        <div class="results_podium results_podium--first">
+            <div class="results_podium__top">
+                <span class="results_podium-position">1</span>
+                <div class="results_podium-icon results_podium-icon--<± first.identifier ±>"></div>
+                <h3 class="results_podium-header"><± first.sport ±></h3>
+            </div>
+            <p class="results_podium-feedback"><± first.feedback ±></p>
+            <div class="results_podium-url"><a href="<± first.url ±>" target="_top"><± first.linkText ±></a></div>
+        </div>
+        <div class="results_podium results_podium--second">
+            <div class="results_podium__top">
+                <span class="results_podium-position">2</span>
+                <div class="results_podium-icon results_podium-icon--<± second.identifier ±>"></div>
+                <h3 class="results_podium-header"><± second.sport ±></h3>
+            </div>
+            <div class="results_podium-url"><a href="<± second.url ±>" target="_top"><± second.linkText ±></a></div>
+        </div>
+        <div class="results_podium results_podium--third">
+            <div class="results_podium__top">
+                <span class="results_podium-position">3</span>
+                <div class="results_podium-icon results_podium-icon--<± third.identifier ±>"></div>
+                <h3 class="results_podium-header"><± third.sport ±></h3>
+            </div>
+            <div class="results_podium-url"><a href="<± third.url ±>" target="_top"><± third.linkText ±></a></div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" class="template___results__bottom">
+    <h3 class="header"><± header ±></h3>
+
+    <ul class="results__bottom__list">
+        <± for (var i = 0; i < sports.length; i++) { ±>
+        
+            <li class="results__bottom__list_item">
+                <span class="results__bottom__list_item-position"><± (i + 1) ±>.</span>
+                <span class="results__bottom__list_item-name"><± sports[i].name ±></span>
+                <div class="results__bottom__list_item-icon results__bottom__list_item-icon--<± sports[i].identifier ±>"></div>
+            </li>
+
+        <± } ±>
+    </ul>
+</script>
+
+<script type="text/template" class="template___results__get_inspired">
+    <h3 class="header"><± header ±></h3>
+    <p class="paragraph"><± didYouKnow ±></p>
+    <ul class="results__get_inspired__list">
+        <± for (var i = 0; i < topSport.facts.length; i++) { ±>
+            <li class="results__get_inspired__list_item"><± topSport.facts[i] ±></li>
+        <± } ±>
+    </ul>
+    <div class="results__commonwealth_section">
+        <a href="<± commonwealthUrl ±>" target="_top"><h4><± commonwealthCta ±></h4></a>
+        <a href="<± commonwealthUrl ±>" target="_top"><img src="<± commonwealthImage ±>" /></a>
+    </div>
+</script>
+
+
+<script type="text/template" class="template___results__video">
+    <h3><± header ±></h3>
+    <div class="media__playlist" data-playlist="<± playlist ±>"></div>
+</script>
+
+<script type="text/template" class="template___header_and_paragraph">
+
+    <h3 class="header header--green <± showHeader ? 'header--show':'' ±>"><± header ±></h3>
+    <p class="paragraph"><± paragraph ±></p>
+
+</script>
+
+<script type="text/template" class="template___graph--svgfallback">
+
+    <ul class="graph__barchart">
+        
+        <± for (var i = 0; i < inputs.length; i++) { var input = inputs[i]; ±>
+
+            <± if (input.property !== "age") { ±>
+
+                <li class="graph__barchart-bar">
+
+                    <h4 class="graph__bar_header"><± input.title ±></h4>
+
+                    <div class="graph__bar_total">
+                        <div class="graph__bar_input graph__bar_input--<± input.property ±>" style="width: <± (input.value*10) ±>%;"></div>
+                    </div>
+            
+                </li>
+    
+            <± } ±>
+
+            <± if (input.property === "communication") { ±>
+                </ul>
+                <ul class="graph__barchart">
+            <± } ±>
+
+        <± } ±>
+    
+    </ul>
+
+</script>

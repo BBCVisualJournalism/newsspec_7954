@@ -1,0 +1,81 @@
+/* use proper box model */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// http://stackoverflow.com/a/6900392
+@mixin unselectable {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/* Self clear automatically */
+.selfclear:before, .selfclear:after {
+    content: "";
+    display: table;
+} 
+.selfclear:after {
+    clear: both;
+}
+.selfclear {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.hidden {
+    display: none;
+}
+
+.header {
+    font-size: 2em;
+    color: #404040;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+.header--green {
+    font-size: 1.4em;
+    color: $additional;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+p, li {
+    font-size: 1.15em;
+}
+
+.button {
+    display: block;
+    clear: both;
+    text-align: center;
+    max-width: 200px;
+    border-bottom: 4px solid;
+    border-color: #404040;
+    padding: 6px 0;
+    color: #404040;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    font-size: 1.3em;
+
+    &:hover, &:active {
+        border-color: $primary;
+    }
+}
+
+.button--results, .button--reset {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button--reset {
+    margin-top: 2em;
+}

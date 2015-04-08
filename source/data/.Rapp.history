@@ -1,0 +1,283 @@
+This script generates the JSON files required by the 'Commonwealth Games Calculator' JavaScript.#
+#####
+#
+# load dependencies#
+library(XLConnect)#
+library(sqldf)#
+library(rjson)#
+#
+# load data#
+setwd('~/Sites/bbc/news/special/2014/newsspec_7954/source/data/')#
+workbook  <- loadWorkbook('cw_games_model.xlsx')#
+data <- readWorksheet(workbook, sheet = 'result')#
+#
+data <- sqldf("SELECT * FROM data")#
+#
+# convert to json#
+json <- toJSON(as.data.frame(t(data)))#
+#
+# save manipulated data#
+write(json, 'processed/data.json')
+help("INSTALL")
+help("INSTALL")
+This script generates the JSON files required by the 'Commonwealth Games Calculator' JavaScript.#
+#####
+#
+# load dependencies#
+library(XLConnect)#
+library(sqldf)#
+library(rjson)#
+#
+# load data#
+setwd('~/Sites/bbc/news/special/2014/newsspec_7954/source/data/')#
+workbook  <- loadWorkbook('cw_games_model.xlsx')#
+data <- readWorksheet(workbook, sheet = 'result')#
+#
+data <- sqldf("SELECT * FROM data")#
+#
+# convert to json#
+json <- toJSON(as.data.frame(t(data)))#
+#
+# save manipulated data#
+write(json, 'processed/data.json')
+This script generates the JSON files required by the 'Commonwealth Games Calculator' JavaScript.#
+#####
+#
+# load dependencies#
+library(XLConnect)#
+library(sqldf)#
+library(rjson)#
+#
+# load data#
+setwd('~/Sites/bbc/news/special/2014/newsspec_7954/source/data/')#
+workbook  <- loadWorkbook('cw_games_model.xlsx')#
+data <- readWorksheet(workbook, sheet = 'result')#
+#
+data <- sqldf("SELECT * FROM data")#
+#
+# convert to json#
+json <- toJSON(as.data.frame(t(data)))#
+#
+# save manipulated data#
+write(json, 'processed/data.json')
+This script generates the JSON files required by the 'Commonwealth Games Calculator' JavaScript.#
+#####
+#
+# load dependencies#
+library(XLConnect)#
+library(sqldf)#
+library(rjson)#
+#
+# load data#
+setwd('~/Sites/bbc/news/special/2014/newsspec_7954/source/data/')#
+workbook  <- loadWorkbook('cw_games_model.xlsx')#
+data <- readWorksheet(workbook, sheet = 'result')#
+#
+data <- sqldf("SELECT * FROM data")#
+#
+# convert to json#
+json <- toJSON(as.data.frame(t(data)))#
+#
+# save manipulated data#
+write(json, 'processed/data.json')
+This script generates the test JSON files required by the 'Commonwealth Games Calculator' JavaScript.#
+#####
+#
+# load dependencies#
+library(rjson)#
+#
+### GENERATE TEST DATA#
+#
+generateTestJSON <- function(age, aggression, body_awareness, communication, focus, pain_tolerance, trust, height, body_fat, power, endurance, coordination, agility){#
+  cwgames <- read.csv("cw_games_model.csv", header=TRUE)#
+#
+  # get squared euclidean distance between user and each sport#
+#   cwgames$score <- #
+#     ((cwgames$aggression - aggression)^2) +#
+#     ((cwgames$body_awareness - body_awareness)^2) +#
+#     ((cwgames$communication - communication)^2) +#
+#     ((cwgames$focus - focus)^2) +#
+#     ((cwgames$pain_tolerance - pain_tolerance)^2) +#
+#     ((cwgames$trust - trust)^2) +#
+#     ((cwgames$height - height)^2) +#
+#     ((cwgames$body_fat - body_fat)^2) +#
+#     ((cwgames$power - power)^2) +#
+#     ((cwgames$endurance - endurance)^2) +#
+#     ((cwgames$coordination - perceptual_motor_coordination)^2) +#
+#     ((cwgames$agility - agility)^2)#
+  # Every 5 years away from the ideal age range, add 1 point.#
+  # Up to 50 years way from the ideal age range gives the maximum +10 points.#
+  cwgames$factorInAge <-#
+    ifelse(#
+      age > cwgames$age_high,#
+      floor((age - cwgames$age_high) / 5),#
+      ifelse(#
+        age < cwgames$age_low,#
+        floor((cwgames$age_low - age) / 5),#
+        0#
+      )#
+    )#
+  cwgames$factorInAggression <-#
+      ifelse(#
+        aggression > cwgames$aggression_high,#
+        (aggression - cwgames$aggression_high)^2,#
+        ifelse(#
+          aggression < cwgames$aggression_low,#
+          (cwgames$aggression_low - aggression)^2,#
+          0#
+        )#
+      )#
+#
+cwgames$factorInBodyAwareness <-#
+  ifelse(#
+    body_awareness > cwgames$body_awareness_high,#
+    (body_awareness - cwgames$body_awareness_high)^2,#
+    ifelse(#
+      body_awareness < cwgames$body_awareness_low,#
+      (cwgames$body_awareness_low - body_awareness)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInCommunication <-#
+  ifelse(#
+    communication > cwgames$communication_high,#
+    (communication - cwgames$communication_high)^2,#
+    ifelse(#
+      communication < cwgames$communication_low,#
+      (cwgames$communication_low - communication)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInFocus <-#
+  ifelse(#
+    focus > cwgames$focus_high,#
+    (focus - cwgames$focus_high)^2,#
+    ifelse(#
+      focus < cwgames$focus_low,#
+      (cwgames$focus_low - focus)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInPainTolerance <-#
+  ifelse(#
+    pain_tolerance > cwgames$pain_tolerance_high,#
+    (pain_tolerance - cwgames$pain_tolerance_high)^2,#
+    ifelse(#
+      pain_tolerance < cwgames$pain_tolerance_low,#
+      (cwgames$pain_tolerance_low - pain_tolerance)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInTrust <-#
+  ifelse(#
+    trust > cwgames$trust_high,#
+    (trust - cwgames$trust_high)^2,#
+    ifelse(#
+      trust < cwgames$trust_low,#
+      (cwgames$trust_low - trust)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInHeight <-#
+  ifelse(#
+    height > cwgames$height_high,#
+    (height - cwgames$height_high)^2,#
+    ifelse(#
+      height < cwgames$height_low,#
+      (cwgames$height_low - height)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInBodyFat <-#
+  ifelse(#
+    body_fat > cwgames$body_fat_high,#
+    (body_fat - cwgames$body_fat_high)^2,#
+    ifelse(#
+      body_fat < cwgames$body_fat_low,#
+      (cwgames$body_fat_low - body_fat)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInPower <-#
+  ifelse(#
+    power > cwgames$power_high,#
+    (power - cwgames$power_high)^2,#
+    ifelse(#
+      power < cwgames$power_low,#
+      (cwgames$power_low - power)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInEndurance <-#
+  ifelse(#
+    endurance > cwgames$endurance_high,#
+    (endurance - cwgames$endurance_high)^2,#
+    ifelse(#
+      endurance < cwgames$endurance_low,#
+      (cwgames$endurance_low - endurance)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInCoordination <-#
+  ifelse(#
+    coordination > cwgames$coordination_high,#
+    (coordination - cwgames$coordination_high)^2,#
+    ifelse(#
+      coordination < cwgames$coordination_low,#
+      (cwgames$coordination_low - coordination)^2,#
+      0#
+    )#
+  )#
+#
+cwgames$factorInAgility <-#
+  ifelse(#
+    agility > cwgames$agility_high,#
+    (agility - cwgames$agility_high)^2,#
+    ifelse(#
+      agility < cwgames$agility_low,#
+      (cwgames$agility_low - agility)^2,#
+      0#
+    )#
+  )#
+#
+  cwgames$score <- #
+    cwgames$factorInAge +#
+    cwgames$factorInAggression +#
+    cwgames$factorInBodyAwareness +#
+    cwgames$factorInCommunication +#
+    cwgames$factorInFocus +#
+    cwgames$factorInPainTolerance +#
+    cwgames$factorInTrust +#
+    cwgames$factorInHeight +#
+    cwgames$factorInBodyFat +#
+    cwgames$factorInPower +#
+    cwgames$factorInEndurance +#
+    cwgames$factorInCoordination +#
+    cwgames$factorInAgility#
+  # sort#
+  cwgames <- cwgames[order(cwgames$score, decreasing=FALSE),]#
+  output <- toJSON(as.data.frame(t(cwgames)))#
+  filename <- paste(sep = '', 'processed/testdata/', age, aggression, body_awareness, communication, focus, pain_tolerance, trust, height, body_fat, power, endurance, coordination, agility, '.json')#
+#
+  write(output, filename)#
+}#
+#
+# John#
+generateTestJSON(35, 5,5,7,8,3,6,6,5,4,7,8,4)#
+# Ransome#
+generateTestJSON(28, 6,7,6,8,6,4,6,6,6,7,6,7)#
+# Dom#
+generateTestJSON(35, 6,7,7,7,7,7,5,6,6,7,8,7)#
+# Chris A#
+generateTestJSON(84, 4,6,6,8,5,8,6,6,6,5,4,8)#
+# Chris J#
+generateTestJSON(35, 4,8,6,9,7,7,3,4,5,9,5,8)

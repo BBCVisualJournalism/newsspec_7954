@@ -1,0 +1,28 @@
+.results__video {
+    max-width: 624px;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+.media__playlist {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    
+    &:after { 
+        padding-top: 56.25%; /*16:9 ratio*/
+        display: block;
+        content: "";
+    }
+
+    .ns_media_content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "debug":          "false",
+  "whichEnv":       "local",
+  "project_number": "7954",
+  "cpsId":          "--REPLACEME--",
+  "year":           "2014",
+  "imageWidths":    ["320", "640", "1024"],
+  "services": {
+    "default": "english",
+    "others": ["welsh", "english-test"]
+  }
+}

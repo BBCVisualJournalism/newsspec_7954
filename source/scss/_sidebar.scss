@@ -1,0 +1,31 @@
+.sidebar, .sidebar .graph {
+    display: none;
+}
+
+@include respondMinMax (650px, false) {
+
+    .sidebar {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 49%;
+        transition: top 0.2s;
+        border: 1px solid $secondary;
+        padding: 5px;
+    }
+}
+
+@include respondMinMax(768px, false) {
+
+    .sidebar__question_feedback {
+        width: 49%;
+        float: left;
+    }
+
+    .sidebar .graph {
+        display: block;
+        width: 49%;
+        float: right;
+    }
+}

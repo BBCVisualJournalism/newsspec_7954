@@ -1,0 +1,23 @@
+{
+    "scaffold_button_results": "Canlyniadau",
+    "scaffold_button_return": "< Yn ôl i'r cwestiynau",
+    "scaffold_button_reset": "Ceisiwch eto",
+    "scaffold_button_share": "Rhannwch",
+    "scaffold_results_top": "Eich camp mwyaf delfrydol yw:",
+    "scaffold_results_bottom": "Efallai eich bod yn llai addas ar gyfer:",
+    "scaffold_results_did_you_know": "Oeddech chi'n gwybod ...?",
+    "share_header": "Rhannwch eich hoff gamp",
+    "share_message_part_1": "Fy hoff gêm yng Ngemau'r Gymanwlad yw",
+    "share_message_part_2": ". Beth yw eich un chi?",
+    "share_image": "http://newsimg.bbc.co.uk/news/special/2014/newsspec_7954/content/english/img/commonwealth_share.gif",
+    "share_url": "http://www.bbc.co.uk/news/uk-28062001",
+    "share_hashtag": "bbcglasgow2014",
+    "scaffold_questions_cta": "Marciwch eich doniau chwaraeon ar raddfa 1-10",
+    "scaffold_graph_title": "Eich Proffil",
+    "scaffold_graph_cta": "Dewiswch y siart isod i weld eich canlyniadau",
+    "scaffold_commonwealth_site_cta": "Ewch i safle Gemau'r Gymanwlad y BBC",
+    "scaffold_commonwealth_site_url": "http://www.bbc.co.uk/sport/commonwealth-games/2014",
+    "scaffold_commonwealth_site_image": "img/commonwealth3.jpg",
+    "scaffold_nonjs": "Mae hwn yn gyfrifiannell rhyngweithiol sy'n ceisio'ch paru â'r gamp sydd efallai fwyaf addas i chi. Er mwyn llwytho'r cyfrifiannell, galluogwch eich JavaScript ac adnewyddu'r dudalen.",
+    "scaffold_oldbrowser": "Mae'n ddrwg gennym - ni fydd y cynnwys hwn yn gweithio yn eich porwr."
+}

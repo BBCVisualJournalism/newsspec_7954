@@ -1,0 +1,39 @@
+$primary:    #57adad;
+$secondary:  #DBDADA;
+$additional: #007f7f;
+$impact:     #7F1E58;
+$fontColor: #404040;
+
+@import "news_special/defaults";
+@import "utils";
+@import "form";
+@import "form_icons_small";
+@import "form_icons_large";
+@import "sidebar";
+@import "graph";
+@import "results";
+@import "results_icons_top";
+@import "results_icons_bottom";
+@import "video";
+
+.main {
+    display: none;
+    color: $fontColor;
+    font-family: Arial, serif;
+    font-size: 14px; // set default size
+    max-width: 976px;
+    position: relative;
+}
+
+.main--js {
+    display: block;
+    margin: 0;
+
+    img {
+        width: 100%;
+    }
+}
+
+.main.main--js {
+    padding: 30px 10px 30px;
+}
