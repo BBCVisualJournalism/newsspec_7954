@@ -1,6 +1,6 @@
 {
   "debug":          "false",
-  "whichEnv":       "local",
+  "whichEnv":       "live",
   "project_number": "7954",
   "cpsId":          "--REPLACEME--",
   "year":           "2014",
